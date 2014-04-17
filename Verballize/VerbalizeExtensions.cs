@@ -1,58 +1,7 @@
-﻿namespace VerbalizeTests
+﻿namespace Verbalize
 {
 	public static class VerbalizeExtensions
 	{
-		private static readonly string[] ZeroNineghteen =
-		{
-			"zero",
-			"jeden",
-			"dwa",
-			"trzy",
-			"cztery",
-			"pięć",
-			"sześć",
-			"siedem",
-			"osiem",
-			"dziewięć",
-			"dziesięć",
-			"jedenaście",
-			"dwanaście",
-			"trzynaście",
-			"czternaście",
-			"piętnaście",
-			"szesnaście",
-			"siedemnaście",
-			"osiemnaście",
-			"dziewiętnaście"
-		};
-
-		private static readonly string[] Tens =
-		{
-			"dziesięć",
-			"dwadzieścia",
-			"trzydzieści",
-			"czterdzieści",
-			"pięćdziesiąt",
-			"sześćdziesiąt",
-			"siedemdziesiąt",
-			"osiemdziesiąt",
-			"dziewięćdziesiąt"
-		};
-
-		private static readonly string[] Hundreds =
-		{
-			"zero",
-			"sto",
-			"dwieście",
-			"trzysta",
-			"czterysta",
-			"pięćset",
-			"sześćset",
-			"siedemset",
-			"osiemset",
-			"dziewięćset"
-		};
-
 
 		public static string Verballize(this int value)
 		{
@@ -72,10 +21,7 @@
 				{
 					return Tens[rest - 1];
 				}
-				else
-				{
-					return Tens[rest - 1] + " " + ZeroNineghteen[mod];
-				}
+				return Tens[rest - 1] + " " + ZeroNineghteen[mod];
 			}
 
 			var hundredMod = value / 100;
@@ -146,5 +92,56 @@
 					return "milionów";
 			}
 		}
+
+		private static readonly string[] ZeroNineghteen =
+		{
+			"zero",
+			"jeden",
+			"dwa",
+			"trzy",
+			"cztery",
+			"pięć",
+			"sześć",
+			"siedem",
+			"osiem",
+			"dziewięć",
+			"dziesięć",
+			"jedenaście",
+			"dwanaście",
+			"trzynaście",
+			"czternaście",
+			"piętnaście",
+			"szesnaście",
+			"siedemnaście",
+			"osiemnaście",
+			"dziewiętnaście"
+		};
+
+		private static readonly string[] Tens =
+		{
+			"dziesięć",
+			"dwadzieścia",
+			"trzydzieści",
+			"czterdzieści",
+			"pięćdziesiąt",
+			"sześćdziesiąt",
+			"siedemdziesiąt",
+			"osiemdziesiąt",
+			"dziewięćdziesiąt"
+		};
+
+		private static readonly string[] Hundreds =
+		{
+			"zero",
+			"sto",
+			"dwieście",
+			"trzysta",
+			"czterysta",
+			"pięćset",
+			"sześćset",
+			"siedemset",
+			"osiemset",
+			"dziewięćset"
+		};
 	}
 }

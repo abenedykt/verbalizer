@@ -7,8 +7,8 @@
     <ProjectGuid>{C440E624-2D3C-45C4-943A-1A3AA84E8314}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Verballize</RootNamespace>
-    <AssemblyName>Verballize</AssemblyName>
+    <RootNamespace>Verbalize</RootNamespace>
+    <AssemblyName>Verbalize</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VerbalizeExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
