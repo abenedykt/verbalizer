@@ -188,11 +188,65 @@ namespace VerbalizeTests
 
 			[Theory]
 			[InlineData(1111, "jeden tysiąc sto jedenaście")]
+			[InlineData(1391, "jeden tysiąc trzysta dziewięćdziesiąt jeden")]
 			public void Four_diggit__number_is_converted_to_propper_string(int input, string expected)
 			{
 				input.Verbalize().Should().Be(expected);
 				input.Verballize().Should().Be(expected);
 			}
+
+			[Theory]
+			[InlineData(15000, "piętnaście tysięcy")]
+			[InlineData(45200, "czterdzieści pięć tysięcy dwieście")]
+			[InlineData(99999, "dziewięćdziesiąt dziewięć tysięcy dziewięćset dziewięćdziesiąt dziewięć")]
+			public void Five_diggit__number_is_converted_to_propper_string(int input, string expected)
+			{
+				input.Verbalize().Should().Be(expected);
+				input.Verballize().Should().Be(expected);
+			}
+
+			[Theory]
+			[InlineData(100000, "sto tysięcy")]
+			[InlineData(999999, "dziewięćset dziewięćdziesiąt dziewięć tysięcy dziewięćset dziewięćdziesiąt dziewięć")]
+			public void Six_diggit__number_is_converted_to_propper_string(int input, string expected)
+			{
+				input.Verbalize().Should().Be(expected);
+				input.Verballize().Should().Be(expected);
+			}
+
+			[Theory]
+			[InlineData(1000000, "jeden milion")]
+			[InlineData(2000000, "dwa miliony")]
+			[InlineData(3000000, "trzy miliony")]
+			[InlineData(4000000, "cztery miliony")]
+			[InlineData(5000000, "pięć milionów")]
+			[InlineData(6000000, "sześć milionów")]
+			[InlineData(7000000, "siedem milionów")]
+			[InlineData(8000000, "osiem milionów")]
+			[InlineData(9000000, "dziewięć milionów")]
+			public void Seven_diggit__number_is_converted_to_propper_string(int input, string expected)
+			{
+				input.Verbalize().Should().Be(expected);
+				input.Verballize().Should().Be(expected);
+			}
+	
+			[Theory]
+			[InlineData(10000000, "dziesięć milionów")]
+			public void Eight_diggit__number_is_converted_to_propper_string(int input, string expected)
+			{
+				input.Verbalize().Should().Be(expected);
+				input.Verballize().Should().Be(expected);
+			}
+
+			[Theory]
+			[InlineData(100000000, "sto milionów")]
+			[InlineData(123456789, "sto dwadzieścia trzy miliony czterysta pięćdziesiąt sześć tysięcy siedemset osiemdziesiąt dziewięć")]
+			public void Nine_diggit__number_is_converted_to_propper_string(int input, string expected)
+			{
+				input.Verbalize().Should().Be(expected);
+				input.Verballize().Should().Be(expected);
+			}
+
 		}
 
 	}

@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace VerbalizeTests
+﻿namespace VerbalizeTests
 {
 	public static class VerbalizeExtensions
 	{
@@ -92,14 +90,25 @@ namespace VerbalizeTests
 				return Hundreds[hundredMod];
 			}
 
-
-			var thousandMod = value / 1000;
-			var thousandRest = value % 1000;
-			if (thousandRest != 0)
+			if (value < 1000000)
 			{
-				return thousandMod.Verbalize() + " " + thousandMod.Thousends() + " " + (value - (thousandMod*1000)).Verbalize();
+
+				var thousandMod = value/1000;
+				var thousandRest = value%1000;
+				if (thousandRest != 0)
+				{
+					return thousandMod.Verbalize() + " " + thousandMod.Thousends() + " " + (value - (thousandMod*1000)).Verbalize();
+				}
+				return thousandMod.Verbalize() + " " + thousandMod.Thousends();
 			}
-			return thousandMod.Verbalize() + " " + thousandMod.Thousends();
+
+			var milionMod = value / 1000000;
+			var milionRest = value % 1000000;
+			if (milionRest != 0)
+			{
+				return milionMod.Verbalize() + " " + milionMod.Milions() + " " + (value - (milionMod * 1000000)).Verbalize();
+			}
+			return milionMod.Verbalize() + " " + milionMod.Milions();
 		}
 
 		private static string Thousends(this int value)
@@ -118,8 +127,24 @@ namespace VerbalizeTests
 					return "tysięcy";
 			}
 		}
+
+		private static string Milions(this int value)
+		{
+			var lastDigit = value%10;
+
+			switch (lastDigit)
+			{
+				case 1:
+					return "milion";
+				case 2:
+					return "miliony";
+				case 3:
+					return "miliony";
+				case 4:
+					return "miliony";
+				default:
+					return "milionów";
+			}
+		}
 	}
-
-
-
 }
