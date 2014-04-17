@@ -115,6 +115,84 @@ namespace VerbalizeTests
 				input.Verballize().Should().Be(expected);
 			}
 
+			[Theory]
+			[InlineData(90, "dziewięćdziesiąt")]
+			[InlineData(91, "dziewięćdziesiąt jeden")]
+			[InlineData(92, "dziewięćdziesiąt dwa")]
+			[InlineData(93, "dziewięćdziesiąt trzy")]
+			[InlineData(94, "dziewięćdziesiąt cztery")]
+			[InlineData(95, "dziewięćdziesiąt pięć")]
+			[InlineData(96, "dziewięćdziesiąt sześć")]
+			[InlineData(97, "dziewięćdziesiąt siedem")]
+			[InlineData(98, "dziewięćdziesiąt osiem")]
+			[InlineData(99, "dziewięćdziesiąt dziewięć")]
+			public void Two_diggit_from90_number_is_converted_to_propper_string(int input, string expected)
+			{
+				input.Verbalize().Should().Be(expected);
+				input.Verballize().Should().Be(expected);
+			}
+
+			[Theory]
+			[InlineData(100, "sto")]
+			[InlineData(200, "dwieście")]
+			[InlineData(300, "trzysta")]
+			[InlineData(400, "czterysta")]
+			[InlineData(500, "pięćset")]
+			[InlineData(600, "sześćset")]
+			[InlineData(700, "siedemset")]
+			[InlineData(800, "osiemset")]
+			[InlineData(900, "dziewięćset")]
+			public void Three_diggit_hundred_number_is_converted_to_propper_string(int input, string expected)
+			{
+				input.Verbalize().Should().Be(expected);
+				input.Verballize().Should().Be(expected);
+			}
+
+
+			[Theory]
+			[InlineData(101, "sto jeden")]
+			[InlineData(121, "sto dwadzieścia jeden")]
+			[InlineData(130, "sto trzydzieści")]
+			[InlineData(132, "sto trzydzieści dwa")]
+			[InlineData(500, "pięćset")]
+			[InlineData(501, "pięćset jeden")]
+			[InlineData(502, "pięćset dwa")]
+			[InlineData(503, "pięćset trzy")]
+			[InlineData(511, "pięćset jedenaście")]
+			[InlineData(999, "dziewięćset dziewięćdziesiąt dziewięć")]
+			public void Three_diggit_numbers_is_converted_to_propper_string(int input, string expected)
+			{
+				input.Verbalize().Should().Be(expected);
+				input.Verballize().Should().Be(expected);
+			}
+
+			[Theory]
+			[InlineData(1000, "jeden tysiąc")]
+			[InlineData(2000, "dwa tysiące")]
+			[InlineData(3000, "trzy tysiące")]
+			[InlineData(4000, "cztery tysiące")]
+			[InlineData(5000, "pięć tysięcy")]
+			[InlineData(6000, "sześć tysięcy")]
+			[InlineData(7000, "siedem tysięcy")]
+			[InlineData(8000, "osiem tysięcy")]
+			[InlineData(9000, "dziewięć tysięcy")]
+			[InlineData(10000, "dziesięć tysięcy")]
+			[InlineData(11000, "jedenaście tysięcy")]
+			[InlineData(12000, "dwanaście tysięcy")]
+			[InlineData(13000, "trzynaście tysięcy")]
+			public void Four_diggit_number_is_converted_to_propper_string(int input, string expected)
+			{
+				input.Verbalize().Should().Be(expected);
+				input.Verballize().Should().Be(expected);
+			}
+
+			[Theory]
+			[InlineData(1111, "jeden tysiąc sto jedenaście")]
+			public void Four_diggit__number_is_converted_to_propper_string(int input, string expected)
+			{
+				input.Verbalize().Should().Be(expected);
+				input.Verballize().Should().Be(expected);
+			}
 		}
 
 	}
