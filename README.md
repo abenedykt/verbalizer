@@ -10,3 +10,8 @@ Zamiana liczb całkowitych na słownie. Biblioteka zawiera metodę do zamiany li
 zwraca:
 
 string "sto dwadzieścia"
+
+* na chwilę obecną maksymalna obsługiwana liczba to: 999 999 999
+* do zmiany - refaktoryzacja do bardziej rekurencyjnej wersji
+* wsparcie dla liczb powyżej miliarda
+* wsparcie dla wartości po przecinu - tak aby można było zamieniać "do groszy"
