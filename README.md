@@ -12,10 +12,10 @@ zwraca:
 string "sto dwadzieścia"
 
 
-** na chwilę obecną maksymalna obsługiwana liczba to: 999 999 999 **
+**na chwilę obecną maksymalna obsługiwana liczba to: 999 999 999**
 
 
-** todo **
+**todo**
 * do zmiany - refaktoryzacja do bardziej rekurencyjnej wersji
 * wsparcie dla liczb powyżej miliarda
 * wsparcie dla wartości po przecinu - tak aby można było zamieniać "do groszy"
