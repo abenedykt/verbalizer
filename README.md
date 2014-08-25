@@ -1,4 +1,4 @@
-verbalizer
+verbalizer [![Build status](https://ci.appveyor.com/api/projects/status/88y2ddqc2nd6roe6)](https://ci.appveyor.com/project/abenedykt/verbalizer)
 ==========
 
 Zamiana liczb całkowitych na słownie. Biblioteka zawiera metodę do zamiany liczby całkowitej na jej zapis słowny.
